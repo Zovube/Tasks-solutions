@@ -6,13 +6,13 @@ using namespace std;
 #define pb push_back
 #define fi first
 #define se second
-#define TASK "bureau"
+#define TASK "horrible"
 #define sz(a) (int)(a).size()
 #define all(c) (c).begin(), (c).end()
 #define TIMESTAMP fprintf(stderr, "Execution time: %.3lf s.\n", (double)clock()/CLOCKS_PER_SEC)
 
 typedef long long ll;
-typedef long double ld;
+typedef double ld;
 typedef vector <int> vi;
 typedef vector <ll> vll;
 typedef pair <int, int> pii;
@@ -24,34 +24,57 @@ const int MAXN = 1e5 + 9;
 const int MOD = (int)(1e9 + 7);
 const int INF = 1e9;
 
-bool used[MAXN];
+int n;
 
 void input() {
-	int n;
 	cin >> n;
-	vi aa(n);
-	for(int i = 0; i < n; i++) {
-		string s;
-		int x;
-		cin >> s;
-		if(s[0] == 'd') aa[i] = n;
-		else {
-			cin >> x;
-			aa[i] = x - 1;
-		}
-	}
-	for(int i = n - 1; i >= 0; i--) {
-		if(!used[i] && aa[i] < n) used[aa[i]] = 1;
-	}
-	vi ans;
-	for(int i = 0; i < n; i++) 
-		if(!used[i]) ans.pb(i);
-	cout << sz(ans) << endl;
-	for(auto x : ans) cout << x + 1 << ' ';
 }
 
 void solve() {
-
+	vpii ans;
+	int lst = -2;
+	for(int i = 0; i < n; i++) {
+		if(i == 0 && n > 1 && lst != -1) {
+			ans.pb({i + 2, -(i + 1)});
+			lst = -1;
+		}
+		if(lst != 0) {
+			ans.pb({i + 1, 0});
+			lst = 0;
+		}
+		for(int j = 0; j < i; j++) {
+			if(lst != 1) {
+				ans.pb({j + 1, (i + 1)});
+				lst = 1;
+			}
+			if(i != n - 1 && lst != -1) {
+				ans.pb({j + 1, -(i + 2)});			
+				lst = -1;
+			}
+		}
+		if(i != n - 1) {
+			if(lst != 1) {
+				ans.pb({i + 2, (i + 1)});
+				lst = 1;
+			}
+			if(lst != -1) {
+				ans.pb({i + 1, -(i + 2)});
+				lst = -1;
+			}
+		}
+		for(int j = i + 2; j < n; j++) {
+			if(lst != 1) {
+				ans.pb({j + 1, (i + 1)});
+				lst = 1;
+			}
+			if(i != n - 1 && lst != -1) {
+				ans.pb({j + 1, -(i + 2)});
+				lst = -1;
+			}
+		}
+	}
+	cout << sz(ans) << endl;
+	for(auto x : ans) cout << x.fi << ' ' << x.se << endl;
 }
 
 int main() {

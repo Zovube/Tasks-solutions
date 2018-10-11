@@ -6,7 +6,7 @@ using namespace std;
 #define pb push_back
 #define fi first
 #define se second
-#define TASK "bureau"
+#define TASK "circles"
 #define sz(a) (int)(a).size()
 #define all(c) (c).begin(), (c).end()
 #define TIMESTAMP fprintf(stderr, "Execution time: %.3lf s.\n", (double)clock()/CLOCKS_PER_SEC)
@@ -24,30 +24,34 @@ const int MAXN = 1e5 + 9;
 const int MOD = (int)(1e9 + 7);
 const int INF = 1e9;
 
-bool used[MAXN];
-
 void input() {
-	int n;
-	cin >> n;
-	vi aa(n);
+	int w, h, n;
+	cin >> w >> h >> n;
+	vi xx(n), yy(n), rr(n);
 	for(int i = 0; i < n; i++) {
-		string s;
-		int x;
-		cin >> s;
-		if(s[0] == 'd') aa[i] = n;
-		else {
-			cin >> x;
-			aa[i] = x - 1;
-		}
+		cin >> xx[i] >> yy[i] >> rr[i];
 	}
-	for(int i = n - 1; i >= 0; i--) {
-		if(!used[i] && aa[i] < n) used[aa[i]] = 1;
+	int ans = w * h;
+	for(int i = 0; i < h; i++) {
+		vector < pii > aa;
+		for(int j = 0; j < n; j++) {
+			if(abs(i - yy[j]) > rr[j]) continue;
+			int add = floor(sqrt(rr[j] * rr[j] - (i - yy[j]) * (i - yy[j])));
+			int cur_l = max(0, xx[j] - add);
+			int cur_r = min(w - 1, xx[j] + add);
+			aa.pb({cur_l, -1});
+			aa.pb({cur_r + 1, 1});
+	 	}
+	 	sort(all(aa));
+	 	int res = 0;
+	 	int cnt = 0;
+	 	for(int j = 0; j < sz(aa); j++) {
+			if(cnt) res += aa[j].fi - aa[j - 1].fi;
+			cnt -= aa[j].se;
+	 	}
+	 	ans -= res;
 	}
-	vi ans;
-	for(int i = 0; i < n; i++) 
-		if(!used[i]) ans.pb(i);
-	cout << sz(ans) << endl;
-	for(auto x : ans) cout << x + 1 << ' ';
+	cout << ans << endl;
 }
 
 void solve() {

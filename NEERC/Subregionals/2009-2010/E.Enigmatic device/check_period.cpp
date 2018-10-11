@@ -6,7 +6,7 @@ using namespace std;
 #define pb push_back
 #define fi first
 #define se second
-#define TASK "bureau"
+#define TASK ""
 #define sz(a) (int)(a).size()
 #define all(c) (c).begin(), (c).end()
 #define TIMESTAMP fprintf(stderr, "Execution time: %.3lf s.\n", (double)clock()/CLOCKS_PER_SEC)
@@ -24,30 +24,26 @@ const int MAXN = 1e5 + 9;
 const int MOD = (int)(1e9 + 7);
 const int INF = 1e9;
 
-bool used[MAXN];
+pii get(int x) {
+	set < int > st;
+	map < int, int > steps;
+	
+	for(int i = 0; i < 100; i++) {
+		if(st.count(x)) {
+			return {steps[x], i - steps[x]};
+		}
+		steps[x] = i;
+		st.insert(x);
+		x = (x * x) % 2010;
+	}
+	return {-1, -1};
+}
 
 void input() {
-	int n;
-	cin >> n;
-	vi aa(n);
-	for(int i = 0; i < n; i++) {
-		string s;
-		int x;
-		cin >> s;
-		if(s[0] == 'd') aa[i] = n;
-		else {
-			cin >> x;
-			aa[i] = x - 1;
-		}
+	for(int i = 0; i < 2010; i++) {
+		pii cur = get(i);
+		cout << i << " : " << cur.fi << ' ' << cur.se << endl;
 	}
-	for(int i = n - 1; i >= 0; i--) {
-		if(!used[i] && aa[i] < n) used[aa[i]] = 1;
-	}
-	vi ans;
-	for(int i = 0; i < n; i++) 
-		if(!used[i]) ans.pb(i);
-	cout << sz(ans) << endl;
-	for(auto x : ans) cout << x + 1 << ' ';
 }
 
 void solve() {
@@ -61,8 +57,8 @@ int main() {
 	freopen("xxx.in", "r", stdin);
 	freopen("xxx.out", "w", stdout);
 #else
-	freopen(TASK".in", "r", stdin);
-	freopen(TASK".out", "w", stdout);
+	//freopen(TASK".in", "r", stdin);
+	//freopen(TASK".out", "w", stdout);
 #endif	
 	input();
 	solve();

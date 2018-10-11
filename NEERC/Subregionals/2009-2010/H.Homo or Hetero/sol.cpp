@@ -6,7 +6,7 @@ using namespace std;
 #define pb push_back
 #define fi first
 #define se second
-#define TASK "bureau"
+#define TASK "homo"
 #define sz(a) (int)(a).size()
 #define all(c) (c).begin(), (c).end()
 #define TIMESTAMP fprintf(stderr, "Execution time: %.3lf s.\n", (double)clock()/CLOCKS_PER_SEC)
@@ -28,26 +28,39 @@ bool used[MAXN];
 
 void input() {
 	int n;
+	set < int > uniq;
+	multiset < int > lst;
 	cin >> n;
-	vi aa(n);
+	bool homo = 0, hetero = 0;
+	set < int > shomo;
 	for(int i = 0; i < n; i++) {
 		string s;
 		int x;
-		cin >> s;
-		if(s[0] == 'd') aa[i] = n;
-		else {
-			cin >> x;
-			aa[i] = x - 1;
+		cin >> s >> x;
+		if(s[0] == 'i') {
+			uniq.insert(x);
+			lst.insert(x);
+			if(lst.count(x) > 1) {
+				homo = 1;
+				shomo.insert(x);
+			}
 		}
+		else {
+			if(uniq.count(x)) {
+				lst.erase(lst.find(x));
+				if(lst.count(x) == 0) uniq.erase(x);
+				if(shomo.count(x) && lst.count(x) < 2) shomo.erase(x);
+			}
+		}
+		if(sz(shomo)) homo = 1;
+		else homo = 0;
+		if(sz(uniq) > 1) hetero = 1;
+		else hetero = 0;
+		if(homo && hetero) cout << "both\n";
+		else if(homo) cout << "homo\n";
+		else if(hetero) cout << "hetero\n";
+		else cout << "neither\n";
 	}
-	for(int i = n - 1; i >= 0; i--) {
-		if(!used[i] && aa[i] < n) used[aa[i]] = 1;
-	}
-	vi ans;
-	for(int i = 0; i < n; i++) 
-		if(!used[i]) ans.pb(i);
-	cout << sz(ans) << endl;
-	for(auto x : ans) cout << x + 1 << ' ';
 }
 
 void solve() {

@@ -6,7 +6,7 @@ using namespace std;
 #define pb push_back
 #define fi first
 #define se second
-#define TASK "bureau"
+#define TASK "jealous"
 #define sz(a) (int)(a).size()
 #define all(c) (c).begin(), (c).end()
 #define TIMESTAMP fprintf(stderr, "Execution time: %.3lf s.\n", (double)clock()/CLOCKS_PER_SEC)
@@ -25,29 +25,45 @@ const int MOD = (int)(1e9 + 7);
 const int INF = 1e9;
 
 bool used[MAXN];
+ll a, b;
+ll p, q;
+
+ll cnt(ll x) {
+	return b / x - (a - 1) / x;
+}
+
+ll F(ll p_pow, ll q_pow) {
+	ll cur_p = 1;
+	for(int i = 0; i < p_pow; i++) cur_p *= p;
+	ll cur_q = 1;
+	for(int i = 0; i < q_pow; i++) {
+		if(cur_q > b / q) return 0;
+		cur_q *= q;
+	}
+	ll res = 0;
+	if(cur_q <= b / cur_p) res += cnt(cur_q * cur_p);
+	if(cur_q * q <= b / cur_p) res -= cnt(cur_q * q * cur_p);
+	if(cur_q <= b / (cur_p * p)) res -= cnt(cur_q * p * cur_p);
+	if(cur_q * q <= b / (cur_p * p)) res += cnt(cur_q * q * p * cur_p);
+	return res;
+}
 
 void input() {
-	int n;
-	cin >> n;
-	vi aa(n);
-	for(int i = 0; i < n; i++) {
-		string s;
-		int x;
-		cin >> s;
-		if(s[0] == 'd') aa[i] = n;
-		else {
-			cin >> x;
-			aa[i] = x - 1;
+	cin >> a >> b >> p >> q;
+	ll ans = 0;
+	ll lim = 0, cur = p;
+	while(cur <= b) {
+		lim++;
+		if(cur > b / p) break;
+		cur *= p;
+	}
+	cerr << lim << endl;
+	for(ll p_pow = 1; p_pow <= lim; p_pow++) {
+		for(ll q_pow = 0; q_pow < p_pow; q_pow++) {
+			ans += F(p_pow, q_pow);
 		}
 	}
-	for(int i = n - 1; i >= 0; i--) {
-		if(!used[i] && aa[i] < n) used[aa[i]] = 1;
-	}
-	vi ans;
-	for(int i = 0; i < n; i++) 
-		if(!used[i]) ans.pb(i);
-	cout << sz(ans) << endl;
-	for(auto x : ans) cout << x + 1 << ' ';
+	cout << ans << endl;
 }
 
 void solve() {

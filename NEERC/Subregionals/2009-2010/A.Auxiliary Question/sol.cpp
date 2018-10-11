@@ -6,7 +6,7 @@ using namespace std;
 #define pb push_back
 #define fi first
 #define se second
-#define TASK "bureau"
+#define TASK "auxiliary"
 #define sz(a) (int)(a).size()
 #define all(c) (c).begin(), (c).end()
 #define TIMESTAMP fprintf(stderr, "Execution time: %.3lf s.\n", (double)clock()/CLOCKS_PER_SEC)
@@ -24,30 +24,18 @@ const int MAXN = 1e5 + 9;
 const int MOD = (int)(1e9 + 7);
 const int INF = 1e9;
 
-bool used[MAXN];
-
 void input() {
-	int n;
-	cin >> n;
-	vi aa(n);
-	for(int i = 0; i < n; i++) {
-		string s;
-		int x;
-		cin >> s;
-		if(s[0] == 'd') aa[i] = n;
+	string s;
+	cin >> s;
+	string ans = "0";
+	for(int i = 0; i < sz(s); i++) {
+		if(s[i] == '+' || s[i] == ')' || s[i] == '(' || s[i] == '+') ans += "+(0)";
 		else {
-			cin >> x;
-			aa[i] = x - 1;
+			ans += '+';
+			ans += s[i];
 		}
 	}
-	for(int i = n - 1; i >= 0; i--) {
-		if(!used[i] && aa[i] < n) used[aa[i]] = 1;
-	}
-	vi ans;
-	for(int i = 0; i < n; i++) 
-		if(!used[i]) ans.pb(i);
-	cout << sz(ans) << endl;
-	for(auto x : ans) cout << x + 1 << ' ';
+	cout << ans << endl;
 }
 
 void solve() {

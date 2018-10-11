@@ -1,0 +1,161 @@
+sol.cpp: In function 'void go(int)':
+sol.cpp:40:5: error: no match for 'operator[]' (operand types are 'int [109]' and 'std::vector<int>')
+   pp[to] = v;
+     ^
+sol.cpp:41:8: error: cannot convert 'std::vector<int>' to 'int' for argument '1' to 'void go(int)'
+   go(to);
+        ^
+sol.cpp:45:33: error: cannot convert 'const std::vector<int>' to 'int' in assignment
+   to[v] = min(gg[v][0], gg[v][1]);
+                                 ^
+sol.cpp: In function 'void input()':
+sol.cpp:51:5: error: request for member 'resize' in 'gg', which is of non-class type 'vvi [109] {aka std::vector<std::vector<int> > [109]}'
+  gg.resize(n);
+     ^~~~~~
+sol.cpp:57:13: error: no matching function for call to 'std::vector<std::vector<int> >::push_back(int&)'
+   gg[p].pb(i);
+             ^
+In file included from C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/vector:64:0,
+                 from C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/queue:61,
+                 from C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/i686-w64-mingw32/bits/stdc++.h:86,
+                 from sol.cpp:2:
+C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/bits/stl_vector.h:914:7: note: candidate: void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = std::vector<int>; _Alloc = std::allocator<std::vector<int> >; std::vector<_Tp, _Alloc>::value_type = std::vector<int>]
+       push_back(const value_type& __x)
+       ^~~~~~~~~
+C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/bits/stl_vector.h:914:7: note:   no known conversion for argument 1 from 'int' to 'const value_type& {aka const std::vector<int>&}'
+C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/bits/stl_vector.h:932:7: note: candidate: void std::vector<_Tp, _Alloc>::push_back(std::vector<_Tp, _Alloc>::value_type&&) [with _Tp = std::vector<int>; _Alloc = std::allocator<std::vector<int> >; std::vector<_Tp, _Alloc>::value_type = std::vector<int>]
+       push_back(value_type&& __x)
+       ^~~~~~~~~
+C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/bits/stl_vector.h:932:7: note:   no known conversion for argument 1 from 'int' to 'std::vector<std::vector<int> >::value_type&& {aka std::vector<int>&&}'
+sol.cpp:60:7: error: missing template arguments before '[' token
+    map[c] = i;
+       ^
+sol.cpp:75:15: error: 'aa' was not declared in this scope
+   reverse(all(aa));
+               ^
+sol.cpp:11:17: note: in definition of macro 'all'
+ #define all(c) (c).begin(), (c).end()
+                 ^
+sol.cpp: In function 'void solve()':
+sol.cpp:87:17: warning: array subscript has type 'char' [-Wchar-subscripts]
+   goal[i] = id[c];
+                 ^
+sol.cpp:87:17: error: cannot convert 'std::map<char, int>' to 'int' in assignment
+sol.cpp:92:12: error: cannot convert 'std::set<_Key, _Compare, _Alloc>::empty<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> > >' from type 'bool (std::set<std::pair<int, int> >::)() const noexcept' to type 'bool'
+  while(!qq.empty) {
+            ^~~~~
+sol.cpp:92:12: error: in argument to unary !
+sol.cpp:96:27: error: no match for 'operator^' (operand types are '__gnu_cxx::__alloc_traits<std::allocator<std::vector<int> > >::value_type {aka std::vector<int>}' and '__gnu_cxx::__alloc_traits<std::allocator<std::vector<int> > >::value_type {aka std::vector<int>}')
+    to[pos[v]] ^= gg[v][0] ^ gg[v][1];
+                            
+In file included from C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/ios:42:0,
+                 from C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/istream:38,
+                 from C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/sstream:38,
+                 from C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/complex:45,
+                 from C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/ccomplex:39,
+                 from C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/i686-w64-mingw32/bits/stdc++.h:52,
+                 from sol.cpp:2:
+C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/bits/ios_base.h:91:3: note: candidate: constexpr std::_Ios_Fmtflags std::operator^(std::_Ios_Fmtflags, std::_Ios_Fmtflags)
+   operator^(_Ios_Fmtflags __a, _Ios_Fmtflags __b)
+   ^~~~~~~~
+C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/bits/ios_base.h:91:3: note:   no known conversion for argument 1 from '__gnu_cxx::__alloc_traits<std::allocator<std::vector<int> > >::value_type {aka std::vector<int>}' to 'std::_Ios_Fmtflags'
+C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/bits/ios_base.h:133:3: note: candidate: constexpr std::_Ios_Openmode std::operator^(std::_Ios_Openmode, std::_Ios_Openmode)
+   operator^(_Ios_Openmode __a, _Ios_Openmode __b)
+   ^~~~~~~~
+C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/bits/ios_base.h:133:3: note:   no known conversion for argument 1 from '__gnu_cxx::__alloc_traits<std::allocator<std::vector<int> > >::value_type {aka std::vector<int>}' to 'std::_Ios_Openmode'
+C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/bits/ios_base.h:173:3: note: candidate: constexpr std::_Ios_Iostate std::operator^(std::_Ios_Iostate, std::_Ios_Iostate)
+   operator^(_Ios_Iostate __a, _Ios_Iostate __b)
+   ^~~~~~~~
+C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/bits/ios_base.h:173:3: note:   no known conversion for argument 1 from '__gnu_cxx::__alloc_traits<std::allocator<std::vector<int> > >::value_type {aka std::vector<int>}' to 'std::_Ios_Iostate'
+In file included from C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/i686-w64-mingw32/bits/stdc++.h:66:0,
+                 from sol.cpp:2:
+C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/bitset:1443:5: note: candidate: template<unsigned int _Nb> std::bitset<_Nb> std::operator^(const std::bitset<_Nb>&, const std::bitset<_Nb>&)
+     operator^(const bitset<_Nb>& __x, const bitset<_Nb>& __y) _GLIBCXX_NOEXCEPT
+     ^~~~~~~~
+C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/bitset:1443:5: note:   template argument deduction/substitution failed:
+sol.cpp:96:36: note:   '__gnu_cxx::__alloc_traits<std::allocator<std::vector<int> > >::value_type {aka std::vector<int>}' is not derived from 'const std::bitset<_Nb>'
+    to[pos[v]] ^= gg[v][0] ^ gg[v][1];
+                                    ^
+In file included from C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/valarray:587:0,
+                 from C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/i686-w64-mingw32/bits/stdc++.h:95,
+                 from sol.cpp:2:
+C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/bits/valarray_after.h:407:5: note: candidate: template<class _Dom1, class _Dom2> std::_Expr<std::_BinClos<std::__bitwise_xor, std::_Expr, std::_Expr, _Dom1, _Dom2>, typename std::__fun<std::__bitwise_xor, typename _Dom1::value_type>::result_type> std::operator^(const std::_Expr<_Dom1, typename _Dom1::value_type>&, const std::_Expr<_Dom2, typename _Dom2::value_type>&)
+     _DEFINE_EXPR_BINARY_OPERATOR(^, __bitwise_xor)
+     ^
+C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/bits/valarray_after.h:407:5: note:   template argument deduction/substitution failed:
+sol.cpp:96:36: note:   '__gnu_cxx::__alloc_traits<std::allocator<std::vector<int> > >::value_type {aka std::vector<int>}' is not derived from 'const std::_Expr<_Dom1, typename _Dom1::value_type>'
+    to[pos[v]] ^= gg[v][0] ^ gg[v][1];
+                                    ^
+In file included from C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/valarray:587:0,
+                 from C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/i686-w64-mingw32/bits/stdc++.h:95,
+                 from sol.cpp:2:
+C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/bits/valarray_after.h:407:5: note: candidate: template<class _Dom> std::_Expr<std::_BinClos<std::__bitwise_xor, std::_Expr, std::_Constant, _Dom, typename _Dom::value_type>, typename std::__fun<std::__bitwise_xor, typename _Dom1::value_type>::result_type> std::operator^(const std::_Expr<_Dom1, typename _Dom1::value_type>&, const typename _Dom::value_type&)
+     _DEFINE_EXPR_BINARY_OPERATOR(^, __bitwise_xor)
+     ^
+C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/bits/valarray_after.h:407:5: note:   template argument deduction/substitution failed:
+sol.cpp:96:36: note:   '__gnu_cxx::__alloc_traits<std::allocator<std::vector<int> > >::value_type {aka std::vector<int>}' is not derived from 'const std::_Expr<_Dom1, typename _Dom1::value_type>'
+    to[pos[v]] ^= gg[v][0] ^ gg[v][1];
+                                    ^
+In file included from C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/valarray:587:0,
+                 from C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/i686-w64-mingw32/bits/stdc++.h:95,
+                 from sol.cpp:2:
+C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/bits/valarray_after.h:407:5: note: candidate: template<class _Dom> std::_Expr<std::_BinClos<std::__bitwise_xor, std::_Constant, std::_Expr, typename _Dom::value_type, _Dom>, typename std::__fun<std::__bitwise_xor, typename _Dom1::value_type>::result_type> std::operator^(const typename _Dom::value_type&, const std::_Expr<_Dom1, typename _Dom1::value_type>&)
+     _DEFINE_EXPR_BINARY_OPERATOR(^, __bitwise_xor)
+     ^
+C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/bits/valarray_after.h:407:5: note:   template argument deduction/substitution failed:
+sol.cpp:96:36: note:   '__gnu_cxx::__alloc_traits<std::allocator<std::vector<int> > >::value_type {aka std::vector<int>}' is not derived from 'const std::_Expr<_Dom1, typename _Dom1::value_type>'
+    to[pos[v]] ^= gg[v][0] ^ gg[v][1];
+                                    ^
+In file included from C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/valarray:587:0,
+                 from C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/i686-w64-mingw32/bits/stdc++.h:95,
+                 from sol.cpp:2:
+C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/bits/valarray_after.h:407:5: note: candidate: template<class _Dom> std::_Expr<std::_BinClos<std::__bitwise_xor, std::_Expr, std::_ValArray, _Dom, typename _Dom::value_type>, typename std::__fun<std::__bitwise_xor, typename _Dom1::value_type>::result_type> std::operator^(const std::_Expr<_Dom1, typename _Dom1::value_type>&, const std::valarray<typename _Dom::value_type>&)
+     _DEFINE_EXPR_BINARY_OPERATOR(^, __bitwise_xor)
+     ^
+C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/bits/valarray_after.h:407:5: note:   template argument deduction/substitution failed:
+sol.cpp:96:36: note:   '__gnu_cxx::__alloc_traits<std::allocator<std::vector<int> > >::value_type {aka std::vector<int>}' is not derived from 'const std::_Expr<_Dom1, typename _Dom1::value_type>'
+    to[pos[v]] ^= gg[v][0] ^ gg[v][1];
+                                    ^
+In file included from C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/valarray:587:0,
+                 from C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/i686-w64-mingw32/bits/stdc++.h:95,
+                 from sol.cpp:2:
+C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/bits/valarray_after.h:407:5: note: candidate: template<class _Dom> std::_Expr<std::_BinClos<std::__bitwise_xor, std::_ValArray, std::_Expr, typename _Dom::value_type, _Dom>, typename std::__fun<std::__bitwise_xor, typename _Dom1::value_type>::result_type> std::operator^(const std::valarray<typename _Dom::value_type>&, const std::_Expr<_Dom1, typename _Dom1::value_type>&)
+     _DEFINE_EXPR_BINARY_OPERATOR(^, __bitwise_xor)
+     ^
+C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/bits/valarray_after.h:407:5: note:   template argument deduction/substitution failed:
+sol.cpp:96:36: note:   '__gnu_cxx::__alloc_traits<std::allocator<std::vector<int> > >::value_type {aka std::vector<int>}' is not derived from 'const std::_Expr<_Dom1, typename _Dom1::value_type>'
+    to[pos[v]] ^= gg[v][0] ^ gg[v][1];
+                                    ^
+In file included from C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/i686-w64-mingw32/bits/stdc++.h:95:0,
+                 from sol.cpp:2:
+C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/valarray:1172:1: note: candidate: template<class _Tp> std::_Expr<std::_BinClos<std::__bitwise_xor, std::_ValArray, std::_ValArray, _Tp, _Tp>, typename std::__fun<std::__bitwise_xor, _Tp>::result_type> std::operator^(const std::valarray<_Tp>&, const std::valarray<_Tp>&)
+ _DEFINE_BINARY_OPERATOR(^, __bitwise_xor)
+ ^
+C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/valarray:1172:1: note:   template argument deduction/substitution failed:
+sol.cpp:96:36: note:   '__gnu_cxx::__alloc_traits<std::allocator<std::vector<int> > >::value_type {aka std::vector<int>}' is not derived from 'const std::valarray<_Tp>'
+    to[pos[v]] ^= gg[v][0] ^ gg[v][1];
+                                    ^
+In file included from C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/i686-w64-mingw32/bits/stdc++.h:95:0,
+                 from sol.cpp:2:
+C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/valarray:1172:1: note: candidate: template<class _Tp> std::_Expr<std::_BinClos<std::__bitwise_xor, std::_ValArray, std::_Constant, _Tp, _Tp>, typename std::__fun<std::__bitwise_xor, _Tp>::result_type> std::operator^(const std::valarray<_Tp>&, const _Tp&)
+ _DEFINE_BINARY_OPERATOR(^, __bitwise_xor)
+ ^
+C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/valarray:1172:1: note:   template argument deduction/substitution failed:
+sol.cpp:96:36: note:   '__gnu_cxx::__alloc_traits<std::allocator<std::vector<int> > >::value_type {aka std::vector<int>}' is not derived from 'const std::valarray<_Tp>'
+    to[pos[v]] ^= gg[v][0] ^ gg[v][1];
+                                    ^
+In file included from C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/i686-w64-mingw32/bits/stdc++.h:95:0,
+                 from sol.cpp:2:
+C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/valarray:1172:1: note: candidate: template<class _Tp> std::_Expr<std::_BinClos<std::__bitwise_xor, std::_Constant, std::_ValArray, _Tp, _Tp>, typename std::__fun<std::__bitwise_xor, _Tp>::result_type> std::operator^(const _Tp&, const std::valarray<_Tp>&)
+ _DEFINE_BINARY_OPERATOR(^, __bitwise_xor)
+ ^
+C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/valarray:1172:1: note:   template argument deduction/substitution failed:
+sol.cpp:96:36: note:   '__gnu_cxx::__alloc_traits<std::allocator<std::vector<int> > >::value_type {aka std::vector<int>}' is not derived from 'const std::valarray<_Tp>'
+    to[pos[v]] ^= gg[v][0] ^ gg[v][1];
+                                    ^
+In file included from C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/i686-w64-mingw32/bits/stdc++.h:105:0,
+                 from sol.cpp:2:
+C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/future:145:20: note: candidate: constexpr std::launch std::operator^(std::launch, std::launch)
+   constexpr launch operator^(launch __x, launch __y)
+                    ^~~~~~~~
+C:/Program Files (x86)/mingw-w64/i686-6.2.0-posix-dwarf-rt_v5-rev0/mingw32/lib/gcc/i686-w64-mingw32/6.2.0/include/c++/future:145:20: note:   no known conversion for argument 1 from '__gnu_cxx::__alloc_traits<std::allocator<std::vector<int> > >::value_type {aka std::vector<int>}' to 'std::launch'
