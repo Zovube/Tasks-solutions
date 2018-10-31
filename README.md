@@ -1,5 +1,5 @@
 # Task-solutions
-Backup of solution for easy finding previously solved problems
+Backup of solutions for easy finding previously solved problems
 
 Theme_tasks - solution of problems on concrete themes from theme contests
 
