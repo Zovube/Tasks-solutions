@@ -1,0 +1,10 @@
+
+Find cycles in sparse graph. Really nice task!
+
+
+
+
+
+Solution: Store all numbers giving given reminder(O(N) in total - thats the trick) and used DSU
+
+Request: DSU + Number Theory

@@ -1,0 +1,11 @@
+
+Count if we can divide graph into pairs of neighbouring edges.
+
+
+
+
+
+
+Solution: Check if the number of edges in all components is even.
+
+Request: DFS, Graphs Representation

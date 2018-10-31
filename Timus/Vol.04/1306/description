@@ -1,0 +1,10 @@
+
+Find median of sequence.
+
+
+
+
+
+Solution: vector + reserve + std::push_heap. pop_heap.
+
+Request: Heap, ready to fuck with ML

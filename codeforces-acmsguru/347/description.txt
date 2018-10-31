@@ -1,0 +1,3 @@
+
+
+Problem on sorting. Standard technique on rearranging object optimally is to sort them with greedy comparator.

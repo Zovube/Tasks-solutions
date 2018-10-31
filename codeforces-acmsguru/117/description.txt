@@ -1,0 +1,3 @@
+
+
+Divisibility by k means equality to 0 modulo k. Binary exponentation gives O(nlogm) solution.

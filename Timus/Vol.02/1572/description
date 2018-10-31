@@ -1,0 +1,16 @@
+
+Just understand the statement.
+
+
+
+
+
+
+Solution: circle:   maxSize := 2 * a;
+      				minSize := 2 * a;
+		  square:   maxSize := a * sqrt(2);
+      				minSize := a;
+		  triangle: maxSize := a;
+      				minSize := a * sqrt(3) / 2;
+
+Request: Basic Geometry

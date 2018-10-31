@@ -1,0 +1,10 @@
+
+Find the smallest segment point belongs to.
+
+
+
+
+
+Solution: ScanLine + set, Possible to solve with stack (again?!).
+
+Request: ScanLine, RBT, Stack

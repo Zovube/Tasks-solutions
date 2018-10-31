@@ -1,0 +1,3 @@
+/home/zovube/ACM/Practice/Task-solutions/Timus/Vol.06/1584/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/zovube/ACM/Practice/Task-solutions/Timus/Vol.06/1584/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/zovube/ACM/Practice/Task-solutions/Timus/Vol.06/1584/cmake-build-debug/CMakeFiles/1584.dir

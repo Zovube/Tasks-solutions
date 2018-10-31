@@ -1,0 +1,10 @@
+
+Find subgraph containing all verticies with minimal maximal weight of edge.
+
+
+
+
+
+Solution: by properties of MST(Kruskal) one of the solutions is MST.
+
+Request: MST, Graph Representation

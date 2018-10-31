@@ -1,0 +1,6 @@
+
+
+A very well known reccurence, mentioned for example in Discrete Math by D.Knuth.
+
+T_n = T_(n - 1) + n
+T_0 = 1

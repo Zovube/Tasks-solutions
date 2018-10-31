@@ -1,0 +1,10 @@
+
+Find if x is present on a segment of array.
+
+
+
+
+
+Solution: SegTree + Set (also possible with sorting + binsearch).
+
+Request: Segment Tree
