@@ -1,0 +1,3 @@
+
+
+Easy problem on contribution technique. O(nlogn) solution with sorting.
