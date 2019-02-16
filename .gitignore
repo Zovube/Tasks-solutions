@@ -28,6 +28,4 @@
 
 # Executables and input/output files
 *.exe
-*.out
-*.in
 *.app
